@@ -1,0 +1,11 @@
+<div id="posts">
+ 
+{{#each posts as |post|}}
+
+{{> post-info post }}
+</div>
+
+    {{else}}
+    <p class="no-posts">You have no Posts yet.</p>
+        {{/each}}
+    </div>
