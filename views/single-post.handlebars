@@ -1,0 +1,31 @@
+{{> post-content }}
+{{#if loggedIn }}
+
+<form class="comments" id="form">
+    <div>
+        <textarea class="text-area" id="comment-body">Write comment</textarea>
+    </div>
+
+<div>
+    <button class="button" type="submit">Post Comment</button>
+    {{> comment }}
+</div>
+
+<div>
+  <section>
+  {{#each post.comment }}
+  <div class="single-comment">
+    <div class="comment-text">
+      {{comment_text}}
+    </div>
+    <div class="flex-end">
+      {{user.username}} 
+    </div>
+  </div>
+  {{/each}}
+  </section>
+</div>
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
